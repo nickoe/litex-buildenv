@@ -68,15 +68,16 @@ _io = [
      Subsignal("odt", Pins("K16"), IOStandard("SSTL135")),
      Subsignal("reset_n", Pins("G13"), IOStandard("SSTL135")),
      Misc("SLEW=FAST"),
-     # 2.14.5
-     # DDR3 Low Voltage Operation
-     # Low voltage operation for the DDR3 SDRAM is available only for modules revision 2 and newer.
-     # The default voltage of the DDR3 is 1.5 V. In order to enable low voltage mode (1.35 V), DDR3_VSEL (pin D9)
-     # must be driven logic 0 by the FPGA logic, and a memory voltage of 1.35 V must be selected in the Memory
-     # Interface Generator (MIG) parameters in Vivado.
-     # For 1.5 V operation, DDR3_VSEL must be set to high impedance (not driven logic 1).
-     Subsignal("ddr3_vsel", Pins("D9"), IOStandard("SSTL135")),
      ),
+    # 2.14.5
+    # DDR3 Low Voltage Operation
+    # Low voltage operation for the DDR3 SDRAM is available only for modules revision 2 and newer.
+    # The default voltage of the DDR3 is 1.5 V. In order to enable low voltage mode (1.35 V), DDR3_VSEL (pin D9)
+    # must be driven logic 0 by the FPGA logic, and a memory voltage of 1.35 V must be selected in the Memory
+    # Interface Generator (MIG) parameters in Vivado.
+    # For 1.5 V operation, DDR3_VSEL must be set to high impedance (not driven logic 1).
+    ("ddr3_vsel", 0, Pins("D9"), IOStandard("LVCMOS33")),
+
 ]
 
 
