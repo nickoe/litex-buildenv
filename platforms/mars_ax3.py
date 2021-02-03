@@ -46,6 +46,7 @@ _io = [
         IOStandard("LVCMOS33")
     ),
     # DDR3 SDRAM
+    # TODO remember to add "on die termination", see 2.14.3 Termination
     ("ddram", 0,
      Subsignal("a", Pins(
          "J17 J14 J18 D18 J13 E17 K13 E18",
