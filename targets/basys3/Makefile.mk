@@ -18,7 +18,9 @@ image-flash-$(PLATFORM): image-flash-py
 
 # Gateware
 gateware-load-$(PLATFORM):
-	openocd -f board/digilent_$(PLATFORM).cfg -c "init; pld load 0 $(TARGET_BUILD_DIR)/gateware/$(PLATFORM).bit; exit"
+	#openocd -f board/digilent_$(PLATFORM).cfg -c "init; pld load 0 $(TARGET_BUILD_DIR)/gateware/$(PLATFORM).bit; exit"
+	#openocd -f board/digilent_arty.cfg -c "init; pld load 0 $(TARGET_BUILD_DIR)/gateware/$(PLATFORM).bit; exit"
+	openocd -f interface/ftdi/digilent-hs2.cfg -c "init; pld load 0 $(TARGET_BUILD_DIR)/gateware/$(PLATFORM).bit; exit"
 
 gateware-flash-$(PLATFORM): gateware-flash-py
 	@true
