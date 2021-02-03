@@ -1,4 +1,5 @@
 # Support for the Digilent Arty Board
+from litex.soc.cores.led import LedChaser
 from migen import *
 
 from litex.soc.integration.soc_sdram import *
@@ -99,5 +100,11 @@ class BaseSoC(SoCSDRAM):
 
         # Mars AX3 specific stuff
         self.comb += platform.request("ddr3_vsel").eq(0)
+
+        # Leds -------------------------------------------------------------------------------------
+        self.submodules.leds = LedChaser(
+            pads         = platform.request_all("user_led"),
+            sys_clk_freq = sys_clk_freq)
+        self.add_csr("leds")
 
 SoC = BaseSoC
