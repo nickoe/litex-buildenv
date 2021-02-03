@@ -643,11 +643,6 @@ echo "Installing requests (python module)"
 pip install requests
 check_import requests
 
-echo
-echo "Installing netifaces (python module)"
-pip install netifaces
-check_import netifaces
-
 
 echo
 echo "Installing robotframework (python module)"

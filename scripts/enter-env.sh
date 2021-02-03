@@ -547,8 +547,6 @@ check_import yaml || return 1
 
 check_import requests || return 1
 
-check_import netifaces || return 1
-
 check_import robot || return 1
 
 check_import pythondata_software_compiler_rt || return 1
