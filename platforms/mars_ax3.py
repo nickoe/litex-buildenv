@@ -77,6 +77,15 @@ _io = [
     # Interface Generator (MIG) parameters in Vivado.
     # For 1.5 V operation, DDR3_VSEL must be set to high impedance (not driven logic 1).
     ("ddr3_vsel", 0, Pins("D9"), IOStandard("LVCMOS33")),
+    # SD carg via SPI connection
+    ("spisdcard", 0,
+     Subsignal("clk", Pins("B4")),
+     Subsignal("mosi", Pins("B1"), Misc("PULLUP True")),
+     Subsignal("cs_n", Pins("A1"), Misc("PULLUP True")),
+     Subsignal("miso", Pins("C4"), Misc("PULLUP True")),
+     Misc("SLEW=FAST"),
+     IOStandard("LVCMOS33"),
+     ),
 
 ]
 
